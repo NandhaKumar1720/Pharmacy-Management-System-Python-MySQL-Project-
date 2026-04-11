@@ -1,52 +1,178 @@
-Pharmacy Management System
-The Pharmacy Management System is a software application designed to streamline pharmacy operations. It allows pharmacists to manage various aspects of their work efficiently. Here are the key features and components of your project:
+# 💊 Python Pharmacy Management System
 
-User Interface (UI) with Tkinter:
-The front-end of your system is built using Tkinter, a Python library for creating graphical user interfaces.
-The UI provides an intuitive experience for users, including pharmacists, customers, and hospitals.
+The **Pharmacy Management System** is a software application designed to streamline and automate daily pharmacy operations. It helps pharmacists efficiently manage medicines, stock, customers, and reports through an intuitive interface.
 
-MySQL Database:
-For the back-end, you’ve used MySQL as the database management system.
-MySQL stores data related to medicines, customers, hospitals, and other relevant information.\
+---
 
-Functionalities:
+## 🌟 Overview
 
-Login Page:
-Users (pharmacists, staff, or customers) can log in securely.
-New users can create accounts with necessary details.
+This project combines a **Tkinter-based graphical user interface** with a **MySQL database** to provide a complete solution for managing pharmacy workflows. It ensures accuracy, efficiency, and ease of use in handling medical inventory and related operations.
 
-Main Page:
-After logging in, users access the main dashboard.
-The dashboard displays relevant information, such as stock status, order history, and pending orders.
+---
 
-Stock Statement:
-You’ve implemented a feature to generate stock statements.
-The system provides details about available medicines, shelf numbers, expiry dates, etc.
+## 🖥️ User Interface (Tkinter)
 
-PDF Generator:
-The system generates PDF reports, including stock statements.
-Pharmacists can easily share these reports with relevant stakeholders.
+* Built using **Python Tkinter**
+* Simple and user-friendly design
+* Provides access to:
 
-Functionality Details:
+  * Login system
+  * Dashboard
+  * Stock management
+  * Report generation
 
-Medicine Management:
-Pharmacists can add, update, and delete medicine records.
-Each medicine entry includes details like name, quantity, price, and expiry date.
+---
 
-Stock Monitoring:
-Pharmacists can check stock availability, reorder levels, and expiry dates.
-Alerts can be set for low stock or expired medicines.
+## 🗄️ Database (MySQL)
 
-Security:
-User authentication ensures secure access.
-Permissions control who can perform specific actions (e.g., adding medicines, generating reports).
+* Uses **MySQL** as the backend database
+* Stores:
 
-Challenges:
-Keeping the system up-to-date with the latest medicines and medical advancements.
-Handling large-scale distribution while ensuring accurate stock management.
-Managing expiration dates effectively.
+  * Medicine details
+  * Customer records
+  * Hospital data
+  * Stock information
 
-Remember that maintaining an efficient and error-free pharmacy management system is crucial for patient safety and smooth operations. Regular updates and attention to detail are essential.
+---
 
-Create MySQL database with SCHEMA:"mydata" and create table with names "pharma","pharmacy","toaddress"
+## 🔑 Core Features
 
+### 🔐 Login System
+
+* Secure authentication for users
+* New user registration supported
+* Role-based access control
+
+---
+
+### 📊 Dashboard
+
+* Overview of pharmacy operations
+* Displays:
+
+  * Stock status
+  * Order history
+  * Pending tasks
+
+---
+
+### 💊 Medicine Management
+
+* Add new medicines
+* Update existing records
+* Delete outdated entries
+* Store:
+
+  * Name
+  * Quantity
+  * Price
+  * Expiry date
+
+---
+
+### 📦 Stock Monitoring
+
+* Track medicine availability
+* Identify low stock levels
+* Monitor expiry dates
+* Improve inventory control
+
+---
+
+### 📄 PDF Report Generator
+
+* Generate stock reports in PDF format
+* Easy sharing with hospitals or management
+
+---
+
+### 📋 Stock Statement
+
+* Displays:
+
+  * Available medicines
+  * Shelf numbers
+  * Expiry dates
+* Helps in quick inventory checks
+
+---
+
+## 🔒 Security
+
+* User authentication system
+* Controlled access to sensitive operations
+* Ensures data safety and integrity
+
+---
+
+## ⚠️ Challenges
+
+* Keeping medicine data updated
+* Managing large inventory efficiently
+* Handling expiry tracking accurately
+* Ensuring system scalability
+
+---
+
+## 🛠️ MySQL Database Setup
+
+Run the following SQL commands to create the database and tables:
+
+```sql
+-- Create Database
+CREATE DATABASE mydata;
+
+-- Use Database
+USE mydata;
+
+-- Table: pharma (medicine details)
+CREATE TABLE pharma (
+    medicine_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    quantity INT,
+    price DECIMAL(10,2),
+    expiry_date DATE
+);
+
+-- Table: pharmacy (user details)
+CREATE TABLE pharmacy (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50),
+    password VARCHAR(100),
+    role VARCHAR(50)
+);
+
+-- Table: toaddress (customer/hospital address)
+CREATE TABLE toaddress (
+    address_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    address TEXT,
+    phone VARCHAR(15)
+);
+```
+
+---
+
+## 📦 How to Run
+
+1. Install Python and MySQL
+2. Set up the database using the SQL script above
+3. Connect Python to MySQL using a connector (e.g., `mysql-connector-python`)
+4. Run the Tkinter application
+
+---
+
+## 🎯 Purpose
+
+This project is built to:
+
+* Simplify pharmacy operations
+* Improve inventory management
+* Reduce manual errors
+* Provide a learning experience in full-stack development
+
+---
+
+## 📌 Note
+
+This project is intended for **educational purposes** and demonstrates how a pharmacy system can be developed using Python and MySQL.
